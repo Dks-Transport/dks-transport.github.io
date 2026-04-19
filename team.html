@@ -12,6 +12,7 @@ margin: 0;
 background: black;
 color: white;
 font-family: Arial;
+overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -32,6 +33,7 @@ color: orange;
 margin: 0 12px;
 text-decoration: none;
 font-weight: bold;
+transition: 0.3s;
 }
 
 nav a:hover {
@@ -69,11 +71,43 @@ background: #111;
 border-radius: 15px;
 padding: 25px;
 text-align: center;
-transition: 0.4s;
 cursor: pointer;
+transition: 0.4s;
+filter: brightness(0.85);
+
+/* ANIMATIE */
+opacity: 0;
+transform: translateY(30px);
+animation: fadeUp 0.6s ease forwards;
 }
 
-/* NAAM */
+/* DELAY */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(7) { animation-delay: 0.7s; }
+.card:nth-child(8) { animation-delay: 0.8s; }
+
+/* HOVER + CLICK */
+.card:hover,
+.card:active {
+filter: brightness(1);
+transform: translateY(-10px) scale(1.05);
+box-shadow: 0 0 40px orange, 0 0 80px red;
+}
+
+/* ANIMATIE */
+@keyframes fadeUp {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* TEKST */
 .card h3 {
 margin: 0;
 font-size: 20px;
@@ -81,7 +115,6 @@ color: orange;
 text-shadow: 0 0 10px orange;
 }
 
-/* ROL */
 .card p {
 margin-top: 10px;
 font-size: 14px;
@@ -100,26 +133,6 @@ text-shadow: 0 0 10px #00bfff;
 
 .driver {
 color: orange;
-}
-
-/* HOVER */
-.card:hover {
-transform: translateY(-10px) scale(1.05);
-box-shadow: 0 20px 60px rgba(255,140,0,0.6);
-}
-
-/* BLUR */
-/* NIEUW EFFECT (werkt ook op mobiel) */
-.card {
-transition: 0.4s;
-filter: brightness(0.85);
-}
-
-.card:hover,
-.card:active {
-filter: brightness(1);
-transform: translateY(-10px) scale(1.05);
-box-shadow: 0 0 40px orange, 0 0 80px red;
 }
 
 /* DISCORD */
@@ -147,12 +160,12 @@ box-shadow: 0 0 40px #5865F2;
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="over.html">Over</a>
-  <a href="team.html">Team</a>
-  <a href="wagenpark.html">Wagenpark</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="join.html">Join</a>
+<a href="index.html">Home</a>
+<a href="over.html">Over</a>
+<a href="team.html">Team</a>
+<a href="wagenpark.html">Wagenpark</a>
+<a href="gallery.html">Gallery</a>
+<a href="join.html">Join</a>
 </nav>
 
 <div class="title">
@@ -161,16 +174,13 @@ box-shadow: 0 0 40px #5865F2;
 
 <div class="grid">
 
-<!-- OWNERS -->
 <div class="card"><h3>Danny</h3><p class="owner">👑 Owner</p></div>
 <div class="card"><h3>Kelsey</h3><p class="owner">👑 Owner</p></div>
 <div class="card"><h3>Sander</h3><p class="owner">👑 Owner</p></div>
 
-<!-- MANAGERS -->
 <div class="card"><h3>Joey</h3><p class="manager">⭐ Manager</p></div>
 <div class="card"><h3>Donker</h3><p class="manager">⭐ Manager</p></div>
 
-<!-- DRIVERS -->
 <div class="card"><h3>Goofy</h3><p class="driver">🚛 Driver</p></div>
 <div class="card"><h3>Dirk</h3><p class="driver">🚛 Driver</p></div>
 <div class="card"><h3>Tim</h3><p class="driver">🚛 Driver</p></div>
