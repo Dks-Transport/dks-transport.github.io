@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D.K.S Transport</title>
+
+<style>
+
+/* ALGEMEEN */
+body {
+margin: 0;
+background: black;
+color: white;
+font-family: Arial;
+}
+
+/* NAVBAR */
+nav {
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(0,0,0,0.9);
+padding: 15px;
+text-align: center;
+border-bottom: 2px solid orange;
+z-index: 1000;
+}
+
+nav a {
+color: orange;
+margin: 0 15px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: white;
+text-shadow: 0 0 10px orange;
+}
+
+/* HERO */
+.hero {
+height: 100vh;
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+url("truck1.png") center/cover no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 55px;
+text-shadow: 0 0 20px orange;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+from { text-shadow: 0 0 10px orange; }
+to { text-shadow: 0 0 30px orange, 0 0 50px red; }
+}
+
+/* CONTENT */
+.content {
+padding: 80px 20px;
+text-align: center;
+}
+
+.content h2 {
+font-size: 30px;
+margin-top: 40px;
+}
+
+.content p {
+max-width: 600px;
+margin: auto;
+line-height: 1.6;
+}
+
+/* LIJST */
+ul {
+list-style: none;
+padding: 0;
+}
+
+ul li {
+margin: 10px 0;
+font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+display: inline-block;
+margin-top: 20px;
+background: orange;
+color: black;
+padding: 12px 25px;
+border-radius: 25px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.btn:hover {
+background: white;
+color: black;
+}
+
+/* DISCORD BUTTON */
+.discord {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: #5865F2;
+padding: 15px 25px;
+border-radius: 50px;
+color: white;
+text-decoration: none;
+font-weight: bold;
+box-shadow: 0 0 20px #5865F2;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="over.html">Over</a>
+  <a href="team.html">Team</a>
+  <a href="wagenpark.html">Wagenpark</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="join.html">Join</a>
+</nav>
+
+
+<!-- HERO -->
+<div class="hero">
+<h1>D.K.S TRANSPORT</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<h2>Welkom bij D.K.S Transport 🚛</h2>
+<p>
+Een actieve VTC waar plezier, respect en samen rijden centraal staan.
+Wij rijden dagelijks en bouwen aan een sterke community.
+</p>
+
+<a href="join.html" class="btn">Join ons</a>
+
+<h2>Waarom DKS?</h2>
+<ul>
+<li>✔ Actieve community</li>
+<li>✔ Gezellige convoys</li>
+<li>✔ Professionele uitstraling</li>
+<li>✔ Iedereen welkom</li>
+</ul>
+
+</div>
+
+<!-- DISCORD BUTTON -->
+<a href="https://discord.gg/dkstransport" class="discord">Discord</a>
+
+</body>
+</html>
