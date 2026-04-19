@@ -109,12 +109,17 @@ box-shadow: 0 20px 60px rgba(255,140,0,0.6);
 }
 
 /* BLUR */
-.grid:hover .card {
-filter: blur(2px) brightness(0.6);
+/* NIEUW EFFECT (werkt ook op mobiel) */
+.card {
+transition: 0.4s;
+filter: brightness(0.85);
 }
 
-.grid .card:hover {
-filter: blur(0) brightness(1);
+.card:hover,
+.card:active {
+filter: brightness(1);
+transform: translateY(-10px) scale(1.05);
+box-shadow: 0 0 40px orange, 0 0 80px red;
 }
 
 /* DISCORD */
