@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerij - D.K.S Transport</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial;
+background: black;
+color: white;
+overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(0,0,0,0.6);
+backdrop-filter: blur(15px);
+padding: 15px;
+text-align: center;
+border-bottom: 2px solid orange;
+z-index: 1000;
+}
+
+nav a {
+color: orange;
+margin: 0 10px;
+text-decoration: none;
+font-weight: bold;
+}
+
+nav a:hover {
+color: white;
+text-shadow: 0 0 10px orange;
+}
+
+/* TITEL */
+.title {
+text-align: center;
+padding-top: 100px;
+}
+
+.title h1 {
+font-size: 42px;
+animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+from { text-shadow: 0 0 10px orange; }
+to { text-shadow: 0 0 50px orange, 0 0 80px red; }
+}
+
+/* GRID */
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+gap: 18px;
+padding: 20px;
+}
+
+/* ITEM */
+.item {
+position: relative;
+overflow: hidden;
+border-radius: 16px;
+cursor: pointer;
+transition: 0.4s ease;
+background: #111;
+}
+
+/* IMAGE */
+.item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: 0.5s ease;
+}
+
+/* HOVER */
+.item:hover {
+transform: translateY(-10px) scale(1.04);
+box-shadow: 0 20px 60px rgba(255,140,0,0.6);
+z-index: 2;
+}
+
+.item:hover img {
+transform: scale(1.15);
+filter: brightness(0.7);
+}
+
+/* OVERLAY */
+.item::after {
+content: "👀 Bekijk";
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0.8);
+opacity: 0;
+color: white;
+font-weight: bold;
+font-size: 18px;
+background: rgba(0,0,0,0.6);
+padding: 10px 20px;
+border-radius: 30px;
+transition: 0.3s;
+}
+
+.item:hover::after {
+opacity: 1;
+transform: translate(-50%, -50%) scale(1);
+}
+
+/* BLUR EFFECT */
+.gallery:hover .item {
+filter: blur(2px) brightness(0.6);
+}
+
+.gallery .item:hover {
+filter: blur(0) brightness(1);
+}
+
+/* LIGHTBOX */
+.lightbox {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.95);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 2000;
+}
+
+.lightbox img {
+max-width: 90%;
+max-height: 90%;
+border-radius: 10px;
+box-shadow: 0 0 40px orange;
+animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+from { transform: scale(0.8); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+ <a href="index.html">Home</a>
+ <a href="over.html">Over</a>
+ <a href="team.html">Team</a>
+ <a href="wagenpark.html">Wagenpark</a>
+ <a href="gallery.html">Gallery</a>
+ <a href="join.html">Join</a>
+</nav>
+
+
+<div class="title">
+<h1>📸 Onze Galerij</h1>
+</div>
+
+<div class="gallery">
+
+<div class="item"><img src="truck16.png"></div>
+<div class="item"><img src="truck17.png"></div>
+<div class="item"><img src="truck18.png"></div>
+<div class="item"><img src="truck19.png"></div>
+<div class="item"><img src="truck20.png"></div>
+<div class="item"><img src="truck21.png"></div>
+<div class="item"><img src="truck22.png"></div>
+<div class="item"><img src="truck23.png"></div>
+<div class="item"><img src="truck24.png"></div>
+<div class="item"><img src="truck25.png"></div>
+<div class="item"><img src="truck26.png"></div>
+<div class="item"><img src="truck27.png"></div>
+<div class="item"><img src="truck28.png"></div>
+<div class="item"><img src="truck29.png"></div>
+<div class="item"><img src="truck30.png"></div>
+<div class="item"><img src="truck31.png"></div>
+<div class="item"><img src="truck32.png"
+ ></div>
+<div class="item"><img src="truck33.png"></div>
+<div class="item"><img src="truck34.png"></div>
+<div class="item"><img src="truck35.png"></div>
+<div class="item"><img src="truck36.png"></div>
+<div class="item"><img src="truck37.png"></div>
+<div class="item"><img src="truck38.png"></div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<script>
+let items = document.querySelectorAll(".item img");
+let lightbox = document.getElementById("lightbox");
+let lightImg = document.getElementById("lightbox-img");
+
+items.forEach(img => {
+img.onclick = () => {
+lightbox.style.display = "flex";
+lightImg.src = img.src;
+}
+});
+
+lightbox.onclick = () => {
+lightbox.style.display = "none";
+}
+</script>
+
+</body>
+</html>
